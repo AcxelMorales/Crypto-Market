@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import CoinItem from './components/CoinItem';
+import EmptyState from './components/EmptyState';
 
 const App = () => {
   const [conins, setConins] = useState([]);
@@ -57,6 +58,7 @@ const App = () => {
           await getDataAPI();
           setRefresh(false);
         }}
+        ListEmptyComponent={EmptyState}
       />
     </SafeAreaView>
   );
@@ -79,7 +81,7 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   textHeader: {
-    color: 'white',
+    color: '#4657CE',
     fontSize: 20,
   },
   searchInput: {
