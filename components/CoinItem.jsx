@@ -25,7 +25,7 @@ const CoinItem = ({
         >
           {Number(price_change_percentage_24h).toFixed(2)}%
         </Text>
-        <Text style={styles.textWhite}>${current_price}</Text>
+        <Text style={styles.textWhite}>${Number(current_price).toFixed(2)}</Text>
       </View>
     </View>
   );
@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
   },
   textWhite: {
     color: 'white',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'right',
   },
   textSymbol: {
     color: '#434343',
@@ -58,12 +59,15 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   boxInfo: {
-    flexDirection: 'row',
+    flexDirection: 'column',
   },
   pricePercentage: {
     color: 'white',
     marginRight: 10,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'right',
+    width: '100%',
+    marginBottom: 2
   },
   priceUp: {
     color: '#50af0f',
